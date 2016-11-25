@@ -24,8 +24,6 @@ board.on("ready", function() {
     var led = new five.Led(13);
 
     this.repl.inject({
-        // Allow limited on/off control access to the
-        // Led instance from the REPL.
         on: function() {
             led.on()
             writeToFirebase.set({'led_status' :'on','date':Date.now(),'id':uuid.v1()});
